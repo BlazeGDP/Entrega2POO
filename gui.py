@@ -2,7 +2,7 @@ import tkinter as tk
 
 from IPython.utils import frame
 
-from Programa import Tienda, Videojuego, Cliente
+from Programa import Tienda, Videojuego, Cliente, IRecibo, ReciboCompra, ReciboAlquiler
 
 
 class ventana:

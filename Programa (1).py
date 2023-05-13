@@ -10,13 +10,11 @@ class Cliente:
         self.apellido: str = apellido
         self.direccion: str = direccion
         self.email: str = email
-        self.contraseña: str = contraseña
+        self.contrasena: str = contraseña
         self.celular: str = celular
         self.fecha_nacimiento: str = fecha_nacimiento
         self.alquiler: bool = False
         self.baneado: bool = False
-
-#Base de datos debe tener, estado (en linea o baneado),
 
 
 class Videojuego:
@@ -49,14 +47,14 @@ class Tienda:
         self.listaclientes: dict[str, Cliente] = dict()
         self.cat: dict[str, Videojuego] = dict()
 
-    # noinspection PyTypeChecker
+
     def registrar_cliente(self, cedula: int, nombre: str, direccion: str, telefono: int, compras: int,
                           estado: int):
         if self.buscar_cliente(cedula) is None:
             cliente: Cliente = Cliente(cedula, nombre, direccion, telefono, compras, estado)
             self.listaclientes[cedula] = cliente
 
-    # noinspection PyTypeChecker
+
     def buscar_cliente(self, cedula: int):
         if cedula in self.listaclientes.keys():
             return self.listaclientes[cedula]
@@ -97,11 +95,9 @@ class Tienda:
                 self.registrar_cliente()
                 self.registrar_juego()
 
-    def enviar_correo(self):
-        pass
 
-    def comprar_juego(self, Cliente:{fecha_nacimiento}):
-        if Cliente.fecha_nacimiento.year < 18:
+    def cliente_mayor_edad(self, cliente_mayor_edad):
+        if cliente_mayor_edad.year < 18:
             return 'no se puede hacer compra'
         pass
 
